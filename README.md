@@ -144,3 +144,13 @@ Then open: http://localhost:8888
 | Random Forest | ~0.902 | ~0.831 | ~0.902 | ~0.851 | ~0.821 |
 
 Full classification report available in outputs/reports/classification_report_lgbm.csv
+
+## Results Summary
+
+| Model | Accuracy | Macro F1 | Micro F1 | Macro Prec | Macro Rec |
+|---|---|---|---|---|---|
+| LightGBM Tuned | 0.9720 | 0.9511 | 0.9720 | 0.9500 | 0.9522 |
+| XGBoost | 0.8470 | 0.8205 | 0.8470 | 0.7650 | 0.9215 |
+| Random Forest | 0.9459 | 0.9083 | 0.9459 | 0.8855 | 0.9369 |
+
+Full classification report in outputs/reports/classification_report_lgbm.csv
