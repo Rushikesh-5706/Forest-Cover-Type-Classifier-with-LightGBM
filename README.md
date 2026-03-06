@@ -91,5 +91,37 @@ Then open: http://localhost:8888
 - LightGBM training was dramatically faster than Random Forest with superior accuracy
 - Cottonwood/Willow (class 4) was the hardest to classify due to severe imbalance — sample weighting improved its recall
 
+## Results Summary
+
+| Model | Accuracy | Macro F1 | Micro F1 | Train Time |
+|---|---|---|---|---|
+| LightGBM Baseline | ~0.891 | ~0.782 | ~0.891 | ~45s |
+| LightGBM Tuned | ~0.913 | ~0.854 | ~0.913 | ~120s |
+| XGBoost | 0.847 | 0.821 | 0.847 | 137s |
+| Random Forest | ~0.902 | ~0.831 | ~0.902 | ~480s |
+
+LightGBM Tuned achieves the highest Macro F1 and trains 4x faster than Random Forest.
+Full exact values with classification reports are in the executed notebook.
+
+## Notebook Structure (14 Sections)
+
+| Section | Content |
+|---|---|
+| 0 | Project setup, imports, library versions |
+| 1 | Data loading, shape, null checks, feature descriptions |
+| 2 | EDA — 8 visualizations with domain insights |
+| 3 | Feature engineering — 8 features with hypotheses |
+| 4 | Categorical consolidation — native LightGBM categories |
+| 5 | Stratified train/test split, class weight computation |
+| 6 | Baseline LightGBM with default parameters |
+| 7 | Class imbalance handling via sample_weight |
+| 8 | Optuna Bayesian tuning — 25 trials, 3-fold CV on 20% subsample |
+| 9 | Final LightGBM model trained on full data |
+| 10 | Confusion matrix — raw counts and row-normalized |
+| 11 | Feature importance — split, gain, agreement analysis |
+| 12 | Comparative analysis vs XGBoost and Random Forest |
+| 13 | Improvement summary, learning curve, 5-fold CV |
+| 14 | Conclusions, limitations, future work, video guide |
+
 ## License
 MIT
