@@ -125,3 +125,12 @@ Full exact values with classification reports are in the executed notebook.
 
 ## License
 MIT
+
+## Docker Build & Push
+```bash
+docker build -t rushi5706/forest-cover-lgbm:latest .
+docker push rushi5706/forest-cover-lgbm:latest
+docker run -p 8888:8888 rushi5706/forest-cover-lgbm:latest
+```
+
+Then open: http://localhost:8888
